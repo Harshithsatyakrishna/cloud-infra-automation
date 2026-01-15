@@ -2,3 +2,16 @@ Day 1:
 - Linux VM setup done
 - GitHub repo created
 - Azure VM accessible via SSH
+Day 2: 
+-Practised Linux commands basics 
+- Revised few Cloud Topics 
+    What is SSH? 
+    - Secure Shell helps to connect with you remote desktop 
+    - Command Line where you can talk to your OS 
+    - Transfer Data securly 
+What is NSG? 
+    - Network Security Group is a firewall between user and the VM 
+    - It has inbound and outbound rules to decide the traffic in and out securly 
+Why port 22 is needed? 
+    - Port 22 is required because SSH uses TCP port 22 by default to remotely access Linux systems. 
+    - If the inbound rule for port 22 is blocked in the NSG, the SSH connection cannot reach the VM.
