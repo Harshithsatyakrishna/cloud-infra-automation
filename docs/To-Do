@@ -91,8 +91,48 @@ DAY 4:
 – Git & GitHub()
   Practised Git Commands though GitBash 
   updated the To DO list through bash not github directly 
-  
+    GIT Commands -
+       1. git --version [to check the present version]
+       2. git update-git-for-windows [to update to latest version]
+       3. Configure git - changes made from which account
+            git config --global user.name "NAME"
+            git config --global user.email "email"
+            git config --list [to check the global list ]
+       4. Clone & Status 
+            git clone <repo-link> [to clone a repo to local machine]
+            git status [displays status of the code]
+       5. Add,Commit,Push
+            git add <filename> [Add untracked file or unstaged changes]
+            git add. [when u have many files]
+            git commit -m "message" [makes a commit]
+            git push origin main [pushes the code to github]
+        6. Create new repo
+            git init [new repo]
+            git remote add origin<link> [links a local Git repository to a remote repository so code can be pushed and pulled.]
+            git remote -v [to verify remote]
+        7. Branch Commands
+            git branch [to check branch]
+            git branch -M main [to rename branch]
+            git checkout <branch name> [to navigate]
+            git checkout -b <new branch name> [to create new branch]
+            git branch -d<branch name> [to delete branch]
+        8. Merging code
+            way-1
+                git diff<branch name> [to compare commits ,branches,files etc]
+                git merge<branch name> [merge branches]
+            way-2
+                From VS code choose pull request 
+        9. Undoing changes
+            Case-1:- Staged changes 
+                    git reset <filename>
+            Case-2:- Commited changes
+                    git reset Head~1 [Reset 1 step back]
+            Case-3:- Commited changes with many commits
+                    git reset<commit hash>
+        Fork- A fork is a new repository that shares code and visibility
+            
 
+-Java +DSA
 
 
 
