@@ -2,16 +2,105 @@ Day 1:
 - Linux VM setup done
 - GitHub repo created
 - Azure VM accessible via SSH
+---------------------------------------------------------------------------------------------------------------------------
 Day 2: 
 -Practised Linux commands basics 
 - Revised few Cloud Topics 
-    What is SSH? 
+Q. What is SSH? 
     - Secure Shell helps to connect with you remote desktop 
     - Command Line where you can talk to your OS 
     - Transfer Data securly 
-What is NSG? 
+Q. What is NSG? 
     - Network Security Group is a firewall between user and the VM 
     - It has inbound and outbound rules to decide the traffic in and out securly 
-Why port 22 is needed? 
+Q. Why port 22 is needed? 
     - Port 22 is required because SSH uses TCP port 22 by default to remotely access Linux systems. 
     - If the inbound rule for port 22 is blocked in the NSG, the SSH connection cannot reach the VM.
+----------------------------------------------------------------------------------------------------------------------------
+Day 3:
+- Linux + Networking 
+  SSH into your Azure Linux VM
+    connect from local bash script to the VM 
+     bash:- ssh <username>@<public ip>
+  Linux Navigation & Files
+    * creating check delete files 
+         bash:- pwd (Print Working Directory)
+                ls(list files & folders in current Directory)
+                ls -l(detailed View)
+                cd /(Moves you to the root directory)
+    * Create Files & Folders
+         bash:- mkdir(creates folder)
+                cd(Moves into Folder)
+                touch(creates file)
+                echo "<text> "<filename>(writes text into the file)
+                cat <filename>(displays the text in the file)
+    * Delete 
+         bash:- rm <filename>(deletes only file)
+                rm -r<folder>(deletes entire folder)
+                
+  File Viewing & System Info
+    *   bash:-  cat /etc/os-release(Shows linux details,name & version)
+                uname -a(shows kernal & system info)
+                whoami(Shows which user you are logged in as)
+                head /etc/passwd(shows first 10 lines of the file)
+                tail /etc/passwd(shows last 10 lines of the file)
+  Permissions
+    *    - --> normal file 
+         d --> directory
+         -> -rw-rw-r
+             |  |  |
+             |  |  ---> others
+             |  -------> Group
+             ----------->Owner
+         In numeric mode, a three-digit value represents specific file permissions (for example, 744.) These are called octal values. 
+         The first digit is for owner permissions, the second digit is for group permissions, and the third is for other users. 
+         Each permission has a numeric value assigned to it:
+        r (read): 4
+        w (write): 2
+        x (execute): 1
+        In the permission value 744, the first digit corresponds to the user, the second digit to the group, and the third digit to others. 
+        By adding up the value of each user classification, you can find the file permissions.
+
+        For example, a file might have read, write, and execute permissions for its owner, and only read permission for all other users. That looks like this:
+
+        Owner: rwx = 4+2+1 = 7
+        Group: r-- = 4+0+0 = 4
+        Others: r-- = 4+0+0 = 4
+        The results produce the three-digit value 744.
+        You can modify file and directory permissions with the chmod command, which stands for "change mode."
+  
+  Process & Resource Commands
+    * ps -ef(shows all running processes)
+      top (live view of system usage)
+      df -h (disk usage )
+      free -m (memory usage)
+      uptime (shows how long server has been running)
+  Networking Commands
+    * ip a (shows network interfaces & ip addresses(private also))
+      ip route(shows routing table)
+      ss - tuln(listing ports)
+      ping.google.com(test internet connectivity)[* ctrl + C to stop]
+      curl.ifconfig.me(shows public ip address)
+
+- Java Concepts 
+  Class & Objects ,Constructors
+  Data types & Math
+  Basic coding 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+DAY 4:
+– Git & GitHub()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
