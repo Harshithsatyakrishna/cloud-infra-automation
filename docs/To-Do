@@ -86,7 +86,7 @@ Day 3:
   Class & Objects ,Constructors
   Data types & Math
   Basic coding 
----------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 DAY 4:
 – Git & GitHub()
   Practised Git Commands though GitBash 
@@ -129,13 +129,25 @@ DAY 4:
                     git reset Head~1 [Reset 1 step back]
             Case-3:- Commited changes with many commits
                     git reset<commit hash>
-        Fork- A fork is a new repository that shares code and visibility
-            
+        Fork- A fork is a new repository that shares code and visibility with the original repository.
+                Used to propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+  
+  Practised linux commands
+  Concepts of Core java + OOPS 
+ ------------------------------------------------------------------------------------------------------------------------------
+ Day -5 :
+  - Started with basic OOPS concepts + coding 
 
--Java +DSA
-
-
-
+  - Installed Terraform 
+  - revised introductional concepts 
+  - set up in vs code or first terraform code
+  - Created and fetched ,App registrtion for client ID, Tenent ID, Secret ID 
+    and assigned new RBAC as contibutor as Terraform does not use your user identity.and got subscription ID 
+  - Terraform init 
+  - Terraform plan 
+  - Basics on terraform 
+------------------------------------------------------------------------------------------------------------------------------
+Day 6:
 
 
 
