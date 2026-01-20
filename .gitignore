@@ -1,0 +1,19 @@
+# Terraform local state
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.backup
+
+# Terraform directories
+.terraform/
+
+# Sensitive files
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+
+# OS / editor
+.vscode/
+.DS_Store
