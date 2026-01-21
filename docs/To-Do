@@ -160,10 +160,20 @@ Day -7
         main.tf	              WHAT to create
       variables.tf	        WHAT inputs are needed
       terraform.tfvars	       ACTUAL values
-  - 
 
+  - Terraform Remote Backend
+      securly store the state file in remote location like Azure blob storage
+      Stores centrally so everyone can access the same state file
+      helps with state locking to avoid conflicts
 
-
+ - Terraform Modules 
+       if terraform = code 
+       modules = clean architecture 
+       Modules help us reuse infrastructure code, reduce duplication, and maintain consistency across environments.
+       We use a root module with environment-specific variables and reusable child modules for resources like VNet, VM, and Resource Groups.
+----------------------------------------------------------------------------------------------------------------------------------
+Day -8 
+    
 
 
 

@@ -1,3 +1,12 @@
+terraform{
+  backend "azurerm"{
+  resource_group_name = "rg-terraform-backend"
+  storage_account_name = "tfstate2002"
+  container_name = "tfstate"
+  key = "dev.terraform.tfstate"
+  }
+}
+
 terraform {
   required_providers {
     azurerm = {
@@ -9,10 +18,11 @@ terraform {
 
 provider "azurerm" {
   features {}
-   
+
 }
 
-resource "azurerm_resource_group" "rg2"{
+module "resource_group" {
+  source   = "./modules/resource-group"
   name     = var.resource_group_name
-location = var.location
+  location = var.location
 }
