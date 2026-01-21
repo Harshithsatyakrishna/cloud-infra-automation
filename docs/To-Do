@@ -148,9 +148,19 @@ DAY 4:
   - Basics on terraform 
 ------------------------------------------------------------------------------------------------------------------------------
 Day 6:
+  - Terraform Basic of Components 
+  - Advantages of Terraform 
+  - “I created Azure resources using Terraform”
+  - “I understand Terraform state basics”
 
-
-
+-------------------------------------------------------------------------------------------------------------------------------
+Day -7 
+  - Created variables.tf file  to make the code reusable  to avoid hard coding 
+        File	                   Purpose
+        main.tf	              WHAT to create
+      variables.tf	        WHAT inputs are needed
+      terraform.tfvars	       ACTUAL values
+  - 
 
 
 
