@@ -32,4 +32,4 @@ Learn and implement cloud infrastructure automation using Infrastructure as Code
 - Day 5: Terraform Fundamentals (REAL CLOUD AUTOMATION) + java (OOPS)
 - Day 6: Create Azure Resources using Terraform (CORE SKILL) + java basic codes
 - Day 7: Terraform Variables + Cleaner Infra (PRO LEVEL STEP) + Remote Backend +outputs +  Modules
-- 
+- Day 8: 
