@@ -1,0 +1,6 @@
+FROM eclipse-temurin:17-jdk-jammy
+WORKDIR /app
+COPY app/HealthServer.java .
+RUN javac HealthServer.java
+EXPOSE 8080
+CMD ["java", "HealthServer"]

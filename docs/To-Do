@@ -173,7 +173,98 @@ Day -7
        We use a root module with environment-specific variables and reusable child modules for resources like VNet, VM, and Resource Groups.
 ----------------------------------------------------------------------------------------------------------------------------------
 Day -8 
-    
+- Installed Docker on windows 
+- Docker basic commands practised
+- Created Dockerfile for java application
+- Built Docker image for java app
+- Ran the java app in Docker container
+-------------------------------------------------------------------------------------------------------------------
+Day -9
+- Learned Docker concepts 
+-  Docker VS VM 
+  Docker is a containerization tool that packages an application along with its dependencies into containers. These containers are lightweight, fast, and share the host operating system’s kernel, which makes them efficient in terms of resource usage.
+  On the other hand, a Virtual Machine runs a complete operating system on top of a hypervisor. Each VM requires its own OS, CPU allocation, RAM, and storage, which increases overhead and puts more load on the host machine.
+  Because Docker containers share the host OS, they start faster, consume fewer resources, and are easier to scale compared to virtual machines.
+  “Docker containers share the host OS and are lightweight, while virtual machines run a full OS and consume more resources.”
+
+- Docker images & Containers
+  Docker Image: A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Images are read-only templates used to create Docker containers.
+  Docker Container: A Docker container is a runtime instance of a Docker image. It is a lightweight, isolated environment where applications can run. Containers share the host system's kernel but have their own filesystem, network interfaces, and process space.
+  In summary, a Docker image is the blueprint or template for creating containers, while a Docker container is the actual running instance of that image.
+
+- Dockerfile Commands
+  FROM: Specifies the base image to use for the Docker image. It sets the starting point for building the image.
+  COPY: Copies files or directories from the host machine into the Docker image at a specified location.
+  RUN: Executes commands in a new layer on top of the current image and commits the results to create a new image layer.
+  CMD: Provides the default command to run when a container is started from the image. It can be overridden at runtime.
+  EXPOSE: Informs Docker that the container listens on the specified network ports at runtime.        
+
+- Docker Baisic Commands
+  docker build -t <image-name> .  [Builds a Docker image from a Dockerfile in the current directory]
+  docker images  [Lists all Docker images on the local machine]
+  docker run -d -p <host-port>:<container-port> <image-name>  [Runs a Docker container in detached mode, mapping host port to container port]
+  docker ps  [Lists all running Docker containers]
+  docker stop <container-id>  [Stops a running Docker container]
+  docker rm <container-id>  [Removes a stopped Docker container]
+  docker rmi <image-id>  [Removes a Docker image from the local machine]    
+-------------------------------------------------------------------------------------------------------------------
+Day -10 
+Deploy Java Application using Docker on Azure VM
+ - Created a simple Java page 
+    basic java server health page 
+    Run locally to test the java application
+
+ - Created a Dockerfile to containerize the Java application.
+      FROM openjdk:17-jdk-slim
+      WORKDIR /app
+      COPY . .
+      RUN javac HealthServer.java
+      CMD ["java", "HealthServer"]
+      EXPOSE 8080       
+
+ - Built the Docker image using the Dockerfile.
+
+      docker build -t health-app .
+      docker run -p 8080:8080 java-health-app
+    - Tested locally "http://localhost:8080/health" to ensure the Java application is working inside the Docker container.
+
+ - SSH into Azure VM and installed Docker on the VM.
+       Installed sudo apt update
+          sudo apt install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          sudo usermod -aG docker azureuser
+          logout
+
+      3. Now change the NSG to allow inbound traffic on port 8080
+          destination port ="8080" [terraform]
+      4. Test FROM VM 
+          http://<VM_PUBLIC_IP>:8080/health
+
+        
+
+ - Pulled the Docker container from local machine to azure VM. 
+     1   [local bash]
+          scp -r app azureuser@<VM_PUBLIC_IP>:/home/azureuser
+         [ON VM]
+          cd app
+          docker build -t health-app .
+          docker run -d -p 8080:8080 --name health-app health-app
+
+    2.  Now change the NSG to allow inbound traffic on port 8080
+          destination port ="8080" [terraform]
+
+ - Run the Docker container on the Azure VM to deploy the Java application.
+
+      docker run -d -p 8080:8080 --name health-app health-app
+
+
+ - Verified that the Java application is running successfully inside the Docker container on the Azure VM.
+    verify:
+      docker ps
+      curl http://<VM_PUBLIC_IP>:8080/health
+-------------------------------------------------------------------------------------------------------------------
+Day -11
 
 
 
